@@ -1,0 +1,8 @@
+DaoType=S2JDBC
+DefaultResourcePath=/BbsApp/src/main/resources
+DefaultRootPackage=myBbsApp
+DefaultSrcPath=/BbsApp/src/main/java
+ServletPath=/BbsApp
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1

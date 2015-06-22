@@ -5,18 +5,14 @@
 </head>
 <body>
 	<h1>This is result</h1>
-<!--
 
-	List list = new ArrayList();
-
-<c:forEach var="b" varStatus="s" items="${bbsItems}">
-	No.<c:out value="${s.index}"/><br>
-	id:<c:out value="${f:h(b.id)}"/><br>
-	名前：<c:out value="${f:h(b.name)}"/><br>
-	コメント<c:out value="${f:h(b.comment)}"/><br>
-
+<c:forEach var="bbs" items="${results}">
+<div style="border:solid 1px #333">
+<div style="float:left;width:100px">${f:h(bbs.name)}"/></div>
+<div style="float:left;margin-left:10px">${f:h(bbs.comment)}"/></div>
+<br style="clear:both"/>
+</div>
  </c:forEach>
 
- -->
 </body>
 </html>

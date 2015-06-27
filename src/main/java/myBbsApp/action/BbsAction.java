@@ -15,6 +15,7 @@ public class BbsAction {
 
 	public JdbcManager jdbcManager;
 	public String result;
+	public List<BbsTable1> results;
 
 	@ActionForm
 	@Resource
@@ -22,6 +23,8 @@ public class BbsAction {
 
 	@Execute(validator = false)
 	public String index() {
+
+		this.results = jdbcManager.from(BbsTable1.class).getResultList();
 
 		return "input.jsp";
 
@@ -32,24 +35,43 @@ public class BbsAction {
 
 		BbsTable1 bbstb = new BbsTable1();
 
+		bbstb.id = (int)Math.round(Math.random()*100000);
+
+		bbstb.name = bbsForm.name;
+		bbstb.comment = bbsForm.comment;
+
+		jdbcManager.insert(bbstb).execute();
+
+		this.results = jdbcManager.from(BbsTable1.class).getResultList();
+
+//		for (int i = 0; i < 9; ++i) {
+//
+//			System.out.println(results.get(i).name);
+//		}
+
+		result = bbstb.id + ":" + bbstb.name + ":" + bbstb.comment;
+
+//		int count1 = jdbcManager.delete(bbstb).execute();
+
+		return "input.jsp";
+	}
+
+	@Execute(validator = false)
+	public String delete() {
+		BbsTable1 bbstb = new BbsTable1();
+
 		bbstb.id = bbsForm.id;
 		bbstb.name = bbsForm.name;
 		bbstb.comment = bbsForm.comment;
 
-		int count = jdbcManager.insert(bbstb).execute();
+		System.out.println("===============================================================================");
+		System.out.println(bbsForm.id);
+		System.out.println("===============================================================================");
+		jdbcManager.delete(bbstb).execute();
 
+		this.results = jdbcManager.from(BbsTable1.class).getResultList();
 
-		List<BbsTable1> results = jdbcManager.from(BbsTable1.class)
-				.getResultList();
-
-		for (int i = 0; i < 9; ++i) {
-
-			System.out.println(results.get(i).name);
-		}
-
-		result = bbstb.id + ":" + bbstb.name + ":" + bbstb.comment;
-
-		return "result.jsp";
+		return "input.jsp";
 	}
 
 }

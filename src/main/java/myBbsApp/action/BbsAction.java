@@ -35,7 +35,7 @@ public class BbsAction {
 
 		BbsTable1 bbstb = new BbsTable1();
 
-		bbstb.id = (int)Math.round(Math.random()*100000);
+		bbstb.id = bbsForm.id;
 
 		bbstb.name = bbsForm.name;
 		bbstb.comment = bbsForm.comment;

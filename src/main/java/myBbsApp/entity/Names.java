@@ -7,7 +7,7 @@ import myBbsApp.entity.BbsTable1Names._BbsTable1Names;
  * 名前クラスの集約です。
  * 
  */
-@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.NamesAggregateModelFactoryImpl"}, date = "2015/06/27 10:04:59")
+@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.NamesAggregateModelFactoryImpl"}, date = "2015/07/05 21:15:00")
 public class Names {
 
     /**

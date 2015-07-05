@@ -1,5 +1,6 @@
 package myBbsApp.entity;
 
+import java.sql.Timestamp;
 import javax.annotation.Generated;
 import org.seasar.extension.jdbc.name.PropertyName;
 
@@ -7,17 +8,8 @@ import org.seasar.extension.jdbc.name.PropertyName;
  * {@link BbsTable1}のプロパティ名の集合です。
  * 
  */
-@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/06/27 10:04:59")
+@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/07/05 21:15:00")
 public class BbsTable1Names {
-
-    /**
-     * idのプロパティ名を返します。
-     * 
-     * @return idのプロパティ名
-     */
-    public static PropertyName<Integer> id() {
-        return new PropertyName<Integer>("id");
-    }
 
     /**
      * nameのプロパティ名を返します。
@@ -35,6 +27,24 @@ public class BbsTable1Names {
      */
     public static PropertyName<String> comment() {
         return new PropertyName<String>("comment");
+    }
+
+    /**
+     * idのプロパティ名を返します。
+     * 
+     * @return idのプロパティ名
+     */
+    public static PropertyName<Integer> id() {
+        return new PropertyName<Integer>("id");
+    }
+
+    /**
+     * uptimeのプロパティ名を返します。
+     * 
+     * @return uptimeのプロパティ名
+     */
+    public static PropertyName<Timestamp> uptime() {
+        return new PropertyName<Timestamp>("uptime");
     }
 
     /**
@@ -71,15 +81,6 @@ public class BbsTable1Names {
         }
 
         /**
-         * idのプロパティ名を返します。
-         *
-         * @return idのプロパティ名
-         */
-        public PropertyName<Integer> id() {
-            return new PropertyName<Integer>(this, "id");
-        }
-
-        /**
          * nameのプロパティ名を返します。
          *
          * @return nameのプロパティ名
@@ -95,6 +96,24 @@ public class BbsTable1Names {
          */
         public PropertyName<String> comment() {
             return new PropertyName<String>(this, "comment");
+        }
+
+        /**
+         * idのプロパティ名を返します。
+         *
+         * @return idのプロパティ名
+         */
+        public PropertyName<Integer> id() {
+            return new PropertyName<Integer>(this, "id");
+        }
+
+        /**
+         * uptimeのプロパティ名を返します。
+         *
+         * @return uptimeのプロパティ名
+         */
+        public PropertyName<Timestamp> uptime() {
+            return new PropertyName<Timestamp>(this, "uptime");
         }
     }
 }

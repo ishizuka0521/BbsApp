@@ -16,6 +16,9 @@ public class BbsAction {
 	public JdbcManager jdbcManager;
 	public String result;
 	public List<BbsTable1> results;
+	public String sub;
+	public String del;
+
 
 	@ActionForm
 	@Resource
@@ -25,6 +28,8 @@ public class BbsAction {
 	public String index() {
 
 		this.results = jdbcManager.from(BbsTable1.class).getResultList();
+
+		this.sub = bbsForm.sub;
 
 		return "input.jsp";
 
@@ -40,6 +45,7 @@ public class BbsAction {
 		bbstb.name = bbsForm.name;
 		bbstb.comment = bbsForm.comment;
 
+
 		jdbcManager.insert(bbstb).execute();
 
 		this.results = jdbcManager.from(BbsTable1.class).getResultList();
@@ -49,7 +55,7 @@ public class BbsAction {
 //			System.out.println(results.get(i).name);
 //		}
 
-		result = bbstb.id + ":" + bbstb.name + ":" + bbstb.comment;
+//		result = bbstb.id + ":" + bbstb.name + ":" + bbstb.comment;
 
 //		int count1 = jdbcManager.delete(bbstb).execute();
 
@@ -70,6 +76,8 @@ public class BbsAction {
 		jdbcManager.delete(bbstb).execute();
 
 		this.results = jdbcManager.from(BbsTable1.class).getResultList();
+
+		this.del = bbsForm.del;
 
 		return "input.jsp";
 	}

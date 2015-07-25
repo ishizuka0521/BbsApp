@@ -44,6 +44,7 @@ public class BbsAction {
 
 		bbstb.name = bbsForm.name;
 		bbstb.comment = bbsForm.comment;
+		bbstb.uptime = bbsForm.uptime;
 
 
 		jdbcManager.insert(bbstb).execute();
@@ -69,6 +70,8 @@ public class BbsAction {
 		bbstb.id = bbsForm.id;
 		bbstb.name = bbsForm.name;
 		bbstb.comment = bbsForm.comment;
+		bbstb.uptime = bbsForm.uptime;
+
 
 		System.out.println("===============================================================================");
 		System.out.println(bbsForm.id);

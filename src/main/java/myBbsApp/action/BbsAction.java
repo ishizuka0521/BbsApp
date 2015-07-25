@@ -29,7 +29,7 @@ public class BbsAction {
 
 		this.results = jdbcManager.from(BbsTable1.class).getResultList();
 
-		this.sub = bbsForm.sub;
+//		this.sub = bbsForm.sub;
 
 		return "input.jsp";
 
